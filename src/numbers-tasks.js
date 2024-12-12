@@ -130,13 +130,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(value) {
-  if (value < 0) {
-    throw new Error('Value must be greather than zero');
-  }
-
-  const lastDigit = parseInt(value.toString().slice(-1), 10);
-  return lastDigit;
+function getLastDigit(num) {
+  return num % 10;
 }
 
 /**
@@ -463,7 +458,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  const num = parseFloat(str);
+  const num = Number.parseFloat(str);
   return Number.isNaN(num) ? NaN : num;
 }
 
@@ -482,7 +477,7 @@ function getFloatOnString(str) {
  * '10', 8              => 8
  */
 function getIntegerOnString(str, base) {
-  const num = parseInt(str, base);
+  const num = Number.parseInt(str, base);
   return Number.isNaN(num) ? NaN : num;
 }
 
